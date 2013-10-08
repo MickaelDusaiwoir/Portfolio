@@ -1,0 +1,11 @@
+@function calculateGrid($nbCol) {
+
+	@return ( $nbCol * $colWidth ) + ( ($nbCol - 1) * $gutter ) ;
+	
+}
+
+@function calculateSkill($nbCol, $colWidth1, $gutter1 ,$pourcent) {
+
+	@return ( ( ( $nbCol * $colWidth1 ) + ( ($nbCol - 1) * $gutter1 ) ) /100 ) * $pourcent;
+
+}
