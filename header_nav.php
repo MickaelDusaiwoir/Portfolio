@@ -1,7 +1,7 @@
 <header id="header" role="header">
 	<div>
-		<figure id="logo">
-			<img src="http://placehold.it/120x60" alt="">
+		<figure id="logo" itemscope itemprop="http://schema.org/Product" >
+			<img src="http://placehold.it/120x60" alt="" itemprop="logo">
 		</figure>
 		<nav role="navigation" >
 			

@@ -14,7 +14,9 @@
 			include 'banner.php';
 		?>
 	
-		<div id="presentation" >
+		<section id="presentation" >
+
+			<h1 class="hidden"><?php _e('Je me présente'); ?></h1>
 			
 			<?php
 
@@ -26,13 +28,17 @@
 					while ( $the_query->have_posts() ) : 
 						$the_query->the_post();
 			?>
-						<article class="post" id="<?php the_ID(); ?>">
+						<article class="post" id="<?php the_ID(); ?>" itemscope itemprop="http://schema.org/BlogPosting" >
 
-							<h1 role="heading" aria-level="1" class="post-title">
+							<h1 role="heading" aria-level="1" class="post-title" itemprop="name">
 								<?php the_title(); ?></a>
 							</h1>
+							
+							<div itemprop="description">
 
-							<?php the_content(); ?>
+								<?php the_content(); ?>
+
+							</div>
 
 						</article>				
 			<?php
@@ -50,9 +56,11 @@
 					<li><span class="bar drupal"></span><h3>Drupal</h3></li>
 				</ul>
 
-		</div>
+		</section>
 
-		<div id="last_post" >
+		<section id="last_post" >
+
+			<h1><?php _e('Mes derniers travaux'); ?></h1>
 
 			<?php
 
@@ -64,21 +72,25 @@
 					while ( $the_query->have_posts() ) : 
 						$the_query->the_post();
 			?>
-						<article class="post" id="<?php the_ID(); ?>">
+						<article class="post" id="<?php the_ID(); ?>" itemscope itemprop="http://schema.org/BlogPosting">
 
 							<figure>
 
-								<?php the_post_thumbnail('semi_small'); ?>
+								<?php the_post_thumbnail('semi_small', array( 'itemprop'=> 'image' ) ); ?>
 
 							</figure>
 
 							<div>
 
-								<h1 role="heading" aria-level="1" class="post-title">
-									<a href="<?php the_permalink(); ?>" title="Pour suivre la lecture de <?php the_title(); ?> " ><?php the_title(); ?></a>
-								</h1>
+								<h1 role="heading" aria-level="1" class="post-title" itemprop="name">
+									<a href="<?php the_permalink(); ?>" title="Pour suivre la lecture de <?php the_title(); ?>" itemprop="url" ><?php the_title(); ?></a>
+								</h1>								
 
-								<?php the_content(); ?>
+								<div itemprop="description">
+
+									<?php the_content(); ?>
+
+								</div>
 
 							</div>
 
@@ -89,7 +101,7 @@
 				endif;			
 			?>
 
-		</div>
+		</section>
 
 	</div>
 

@@ -78,20 +78,20 @@ body {
 
 	& a {
 
-		display: block;
-		padding: 1.7em 0.54em;
+		display: block;		
+		font-size: 1.2em;
+		padding: 1.35em 0.75em;
 		text-align: center;
 		color: white;
+		@include box-sizing(border-box);
+
 
 		&:hover {
 
 			background-image: url('../images/whiteorchid.png');
 			color: black;
-			font-style: italic;	
-			font-size: 1.2em;
-			padding: 1.24em 0.5em;
-			font-weight: bold;
-
+			font-size: 1.2em;			
+			padding: 1.35em 0.75em;
 		}
 
 	}
@@ -307,7 +307,9 @@ body {
 
 #last_post {
 
-	margin: 1em 0;
+	@include generateGrid(12);
+	margin-bottom: 1em;
+	margin-top: 1em;
 
 	& h1 {
 
@@ -316,8 +318,6 @@ body {
 	}
 
 	& article {
-
-		@include generateGrid(12);
 
 		padding-top: 0.5em;
 
