@@ -678,49 +678,66 @@ html, body {
 #portfolio a {
   text-decoration: none; }
 /* line 544, ../scss/screen.scss */
-#portfolio div figcaption {
+#portfolio .small_img {
+  width: 300px;
+  margin: 0 10px;
+  display: inline-block;
+  float: left;
+  margin: 10px 0; }
+/* line 550, ../scss/screen.scss */
+#portfolio .small_img:nth-child(n + 3) {
+  margin-right: 0; }
+/* line 556, ../scss/screen.scss */
+#portfolio .small_img_2 {
+  margin: 10px 20px; }
+/* line 561, ../scss/screen.scss */
+#portfolio .middle_img {
+  width: 460px;
+  margin: 0 10px;
+  display: inline-block;
+  float: left;
+  margin: 10px 0; }
+/* line 568, ../scss/screen.scss */
+#portfolio .middle_img_1 {
+  margin: 10px 20px 10px 0; }
+/* line 573, ../scss/screen.scss */
+#portfolio figcaption {
   display: block;
-  margin: 0.5em 0;
+  margin: 0.5em 0 0 0;
   padding: 0.25em 0 0.25em 1em;
   position: absolute;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
   font-style: italic; }
-/* line 558, ../scss/screen.scss */
-#portfolio div:nth-child(odd) figure {
-  width: 300px;
-  margin: 0 10px;
-  display: inline-block;
-  margin: 0 8px;
-  overflow: hidden; }
-/* line 568, ../scss/screen.scss */
-#portfolio div:nth-child(odd) figcaption {
+/* line 587, ../scss/screen.scss */
+#portfolio .small_img figure {
+  overflow: hidden;
+  height: auto; }
+/* line 595, ../scss/screen.scss */
+#portfolio .small_img img, #portfolio .middle_img img {
+  vertical-align: middle; }
+/* line 601, ../scss/screen.scss */
+#portfolio .small_img figcaption {
   width: 285px;
-  bottom: 0;
+  bottom: 6px;
   left: -300px;
   transition: left linear 0.5s; }
-/* line 579, ../scss/screen.scss */
-#portfolio div:nth-child(odd) a:hover figcaption, #portfolio div:nth-child(even) a:hover figcaption {
+/* line 612, ../scss/screen.scss */
+#portfolio .small_img:hover figcaption, #portfolio .middle_img:hover figcaption {
   left: 0; }
-/* line 585, ../scss/screen.scss */
-#portfolio div:nth-child(even) figure {
+/* line 618, ../scss/screen.scss */
+#portfolio .middle_img figure {
   width: 460px;
   margin: 0 10px;
   display: inline-block;
-  margin: 0 8px;
+  margin: 0;
   overflow: hidden; }
-/* line 595, ../scss/screen.scss */
-#portfolio div:nth-child(even) figcaption {
+/* line 628, ../scss/screen.scss */
+#portfolio .middle_img figcaption {
   width: 445px;
   bottom: 0;
   left: -460px;
   transition: left linear 0.5s; }
-/* line 606, ../scss/screen.scss */
-#portfolio div a:first-child figure {
-  margin-left: 0; }
-/* line 612, ../scss/screen.scss */
-#portfolio div a:last-child figure {
-  margin-right: 0; }
-/* line 618, ../scss/screen.scss */
+/* line 640, ../scss/screen.scss */
 #portfolio figure {
   position: relative; }

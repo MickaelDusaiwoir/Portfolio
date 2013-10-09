@@ -541,10 +541,39 @@ body {
 
 	}
 
-	& div figcaption {
+	.small_img {
+
+		@include generateGrid(4);
+		float: left;
+		margin: $gutter/2 0;
+		
+		&:nth-child( n + 3 ) {
+			margin-right: 0;
+		}
+
+	}
+
+	.small_img_2 {
+
+		margin: $gutter/2 $gutter;
+	}
+
+	.middle_img {
+	
+		@include generateGrid(6);
+		float: left;
+		margin: $gutter/2 0;
+	}
+
+	.middle_img_1 {
+		
+		margin: $gutter/2 $gutter $gutter/2 0;
+	}
+
+	& figcaption {
 
 		display: block;
-		margin: 0.5em 0;
+		margin: 0.5em 0 0 0;
 		padding: 0.25em 0 0.25em 1em;
 
 		position: absolute;
@@ -555,44 +584,48 @@ body {
 
 	}
 
-	& div:nth-child(odd) figure {
-
-		@include generateGrid(4);
-
-		margin: 0 8px;
+	& .small_img figure {
 
 		overflow: hidden;
 
+		height: auto;
+
 	}	
 
-	& div:nth-child(odd) figcaption {
+	& .small_img img, & .middle_img img {
+	
+		vertical-align: middle;
+
+	}
+
+	& .small_img figcaption {
 		
 		width: ( ( 4 * $colWidth ) + ( $gutter * 3 ) ) - 15 ;
 
-		bottom: 0;
+		bottom: 6px;
 		left: -( ( ( 4 * $colWidth ) + ( $gutter * 3 ) ));
 
 		transition: left linear 0.5s;
 
 	}
 
-	& div:nth-child(odd) a:hover figcaption, & div:nth-child(even) a:hover figcaption {
+	& .small_img:hover figcaption, & .middle_img:hover figcaption {
 
 		left: 0;
 
 	}
 
-	& div:nth-child(even) figure {
+	& .middle_img figure {
 
 		@include generateGrid(6);
 
-		margin: 0 8px;
+		margin: 0;
 
 		overflow: hidden;
 
 	}
 
-	& div:nth-child(even) figcaption {
+	& .middle_img figcaption {
 		
 		width: ( ( 6 * $colWidth ) + ( $gutter * 5 ) ) - 15 ;
 
@@ -603,17 +636,6 @@ body {
 
 	}
 
-	& div a:first-child figure {
-
-		margin-left: 0;
-
-	}
-
-	& div a:last-child figure {
-
-		margin-right: 0;
-
-	}
 
 	& figure {
 
