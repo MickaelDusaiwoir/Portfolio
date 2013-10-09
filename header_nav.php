@@ -9,17 +9,11 @@
 				Menu principal
 			</h1>
 			
-			<ul>
-				<li>
-					<a href="#" title="Aller sur la page d'accueil"><em>Accueil</em></a>
-				</li>
-				<li>
-					<a href="portfolio.html" title="Voir mes travaux">Réalisation</a>
-				</li>
-				<li>
-					<a href="contact.html" title="Vous souhaitez me contacter ?">Contact</a>
-				</li>
-			</ul>
+			<?php 
+			
+				wp_nav_menu( array( 'theme_location' => 'primary', 'container' => '' ) );
+
+			?>
 		
 		</nav>
 	</div>

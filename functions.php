@@ -56,4 +56,16 @@
 			'supports' => array('title', 'editor', 'thumbnail', 'post-formats', 'excerpt', 'comments')
 			)
 		);
+
+		register_post_type( 'Presentation',
+			array(
+				'labels' => array(
+					'name' => __( 'Présentation' ),
+					'singular_name' => __( 'presentation' )
+				),
+			'public' => true,
+			'has_archive' => true,
+			'supports' => array('title', 'editor', 'thumbnail', 'post-formats', 'excerpt', 'custom-fields')
+			)
+		);
 	}
