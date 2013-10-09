@@ -34,7 +34,7 @@
 		add_theme_support('post-thumbnails');
 
         if ( function_exists('add_image_size') ) {
-            add_image_size('semi_smal', 300, 150, FALSE);
+            add_image_size('semi_small', 280, 250, FALSE);
             add_image_size('semi_big', 460, 200, FALSE);
             add_image_size('banner', 940, 783, FALSE);
             set_post_thumbnail_size(940, 220, true);

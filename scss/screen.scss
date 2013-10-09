@@ -124,12 +124,14 @@ body {
 
 #presentation {
 
+	@include generateGrid(12);
 	margin-bottom: 1em;
 	
 	& article {
 	
 		@include generateGrid(6);
 		vertcal-align: top;
+		margin-left: 0;
 
 		line-height: 1.6;
 
@@ -147,11 +149,14 @@ body {
 
 		}
 
+		float: left;
+
 	}
 
 	& #skill {
 
 		@include generateGrid(6);
+		float:right;
 
 		list-style-type: none;
 		padding: 0px;
@@ -312,9 +317,11 @@ body {
 
 	& article {
 
-		margin: 1em 0 2em ($colWidth + $gutter );
+		@include generateGrid(12);
 
 		padding-top: 0.5em;
+
+		margin-bottom: 1.5em;
 
 		@include border-radius( 5px );
 
@@ -330,20 +337,40 @@ body {
 
 	}
 
-	& figure {
+	& article:after {
 
-		@include generateGrid(3);
+		clear: both;
+		content: "";	
+	    display: block;
+	    overflow: hidden;
+	    height: 1px;
 
 	}
+
+	& figure {
+		
+		@include box-sizing(border-box);
+		@include generateGrid(4);
+		margin-left: 0;
+		padding: 0 $gutter/2;
+		float: left;
+
+	}
+
 
 
 	& div {
 
 		@include generateGrid(8);
+		@include box-sizing(border-box);
 
 		margin-right: 0;
 
+		padding-right: $gutter/2;
+
 		vertical-align: top;
+
+		float: right;
 	
 	}
 
