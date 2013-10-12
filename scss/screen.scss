@@ -95,6 +95,7 @@ body {
 		}
 
 	}
+
 }
 
 /*  Bannière  */
@@ -102,8 +103,12 @@ body {
 #banner {
 
 	@include generateGrid(12);
-	margin-bottom: 1.7em;
-	margin-top: 1em;
+	margin-bottom: $gutter/2;
+	margin-top: $gutter;
+
+	& figure img {
+		vertical-align: middle;
+	}
 
 }
 
@@ -125,7 +130,9 @@ body {
 #presentation {
 
 	@include generateGrid(12);
-	margin-bottom: 1em;
+	margin-bottom: $gutter/2;
+	margin-top: $gutter/2;
+
 	
 	& article {
 	
@@ -145,7 +152,7 @@ body {
 
 		& p {
 
-			margin: 0 0 1em 0;
+			margin: 0.5em 0 0 0;
 
 		}
 
@@ -160,7 +167,7 @@ body {
 
 		list-style-type: none;
 		padding: 0px;
-		margin: 0.17em 0 0 $gutter/2;
+		margin: 0.7em 0 0 $gutter/2;
 
 		vertical-align: top;
 
@@ -308,12 +315,12 @@ body {
 #last_post {
 
 	@include generateGrid(12);
-	margin-bottom: 1em;
-	margin-top: 1em;
+	margin-bottom: $gutter/2;
+	margin-top: $gutter/2;
 
-	& h1 {
+	& h2 {
 
-		margin-top: 0.8em;
+		margin-top: 0;
 
 	}
 
@@ -321,7 +328,7 @@ body {
 
 		padding-top: 0.5em;
 
-		margin-bottom: 1.5em;
+		margin-bottom: $gutter;
 
 		@include border-radius( 5px );
 
@@ -371,6 +378,12 @@ body {
 		vertical-align: top;
 
 		float: right;
+
+		& div {
+			
+		padding-left:  $gutter/2;
+
+		}
 	
 	}
 
@@ -640,6 +653,47 @@ body {
 	& figure {
 
 		position: relative;
+
+	}
+
+}
+
+/*  Single Travaux  */
+
+#single_travaux {
+
+	@include generateGrid(12);
+	margin-top: $gutter/2;
+
+	& figure {
+
+		@include generateGrid(6);
+		margin: 0 $gutter/2 0 0;
+		float: left;
+
+		& img {
+
+			vertical-align: middle;
+		}
+	}
+
+	& div {
+
+		@include generateGrid(6);
+		margin: 0 0 0 $gutter/2;
+		float: right;
+
+	}
+
+	& h2 {
+
+		margin-top: 0;
+		margin-bottom: $gutter/2;
+	}
+
+	& p {
+		
+		margin: $gutter/2 0;
 
 	}
 

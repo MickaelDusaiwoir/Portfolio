@@ -42,7 +42,7 @@
 
 									  <?php the_post_thumbnail('small_img', array( 'itemprop'=> 'image' ) ); ?>
 
-									  <figcaption itemprop="description"><?php the_title(); ?></figcaption>
+									  <figcaption itemprop="name"><?php the_title(); ?></figcaption>
 
 									</figure>
 								</a>
@@ -59,7 +59,7 @@
 
 									  <?php the_post_thumbnail('middle_img', array( 'itemprop'=> 'image' ) ); ?>
 
-									  <figcaption itemprop="description"><?php the_title(); ?></figcaption>
+									  <figcaption itemprop="name"><?php the_title(); ?></figcaption>
 
 									</figure>
 								</a>

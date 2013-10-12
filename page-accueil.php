@@ -6,7 +6,7 @@
 	include 'header_nav.php'; 
 ?>
 
-	<h1 class="hidden"><?php _e('Page d\'accueil'); ?></h1>
+	<h1 class="hidden" role="heading" aria-level="1"><?php _e('Page d\'accueil'); ?></h1>
 
 	<div id="container" role="main">
 
@@ -16,12 +16,12 @@
 	
 		<section id="presentation" >
 
-			<h1 class="hidden"><?php _e('Je me présente'); ?></h1>
+			<h1 class="hidden" role="heading" aria-level="1"><?php _e('Je me présente'); ?></h1>
 			
 			<?php
 
 				// The Query
-				$the_query = new WP_Query( array( 'post_type' => 'presentation', 'meta-key' => 'post_name', 'meta_value' => 'presentation' ) );
+				$the_query = new WP_Query( array( 'post_type' => 'presentation', 'meta-key' => 'post_name', 'meta_value' => 'presentation') );
 
 				// The Loop
 				if ( $the_query->have_posts() ) :
@@ -60,12 +60,12 @@
 
 		<section id="last_post" >
 
-			<h1><?php _e('Mes derniers travaux'); ?></h1>
+			<h1 role="heading" aria-level="1"><?php _e('Mes derniers travaux'); ?></h1>
 
 			<?php
 
 				// The Query
-				$the_query = new WP_Query( array( 'post_type' => 'Travaux' ) );
+				$the_query = new WP_Query( array( 'post_type' => 'Travaux', 'posts_per_page' => 3  ) );
 
 				// The Loop
 				if ( $the_query->have_posts() ) :
@@ -82,9 +82,9 @@
 
 							<div>
 
-								<h1 role="heading" aria-level="1" class="post-title" itemprop="name">
+								<h2 role="heading" aria-level="1" class="post-title" itemprop="name">
 									<a href="<?php the_permalink(); ?>" title="Pour suivre la lecture de <?php the_title(); ?>" itemprop="url" ><?php the_title(); ?></a>
-								</h1>								
+								</h2>								
 
 								<div itemprop="description">
 

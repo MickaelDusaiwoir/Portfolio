@@ -10,7 +10,7 @@
 	        while ($loop->have_posts()):
 	            $loop->the_post();
 	            ?>
-	                <a href="<?php the_permalink(); ?>"><figure><?php the_post_thumbnail(); ?></figure></a>
+	                <a href="<?php the_permalink(); ?>" title="En savoir plus sur ' <?php the_title(); ?> '"><figure><?php the_post_thumbnail(); ?></figure></a>
 	            <?php
 	        endwhile;
 	    else :
