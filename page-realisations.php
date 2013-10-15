@@ -44,8 +44,7 @@
 
 									  <figcaption itemprop="name"><?php the_title(); ?></figcaption>
 
-									</figure>
-								</a>
+									</figure></a>
 
 							<?php 
 
@@ -61,13 +60,12 @@
 
 									  <figcaption itemprop="name"><?php the_title(); ?></figcaption>
 
-									</figure>
-								</a>
+									</figure></a>
 
 
 							<?php 
 
-								$u = $u <= 2 ? 1 : $u ;
+								$u = $u > 2 ? 1 : $u ;
 								$i = $u == 2 ? 1 : $i ;
 								$u++;
 

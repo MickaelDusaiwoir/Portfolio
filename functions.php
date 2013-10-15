@@ -35,8 +35,9 @@
 
         if ( function_exists('add_image_size') ) {
             add_image_size('semi_small', 280, 250, FALSE);
-            add_image_size('small_img', 300, 250, FALSE);
-            add_image_size('middle_img', 460, 390, TRUE);
+            add_image_size('small_img', 290, 250, FALSE);
+            add_image_size('middle_img', 450, 390, TRUE);
+            add_image_size('light_box', 1360, 768, FALSE);
             add_image_size('banner', 940, 783, FALSE);
             set_post_thumbnail_size(940, 220, true);
         }
@@ -46,6 +47,7 @@
 	}
 
 	function create_post_type() {
+
 		register_post_type( 'Travaux',
 			array(
 				'labels' => array(
@@ -54,7 +56,8 @@
 				),
 			'public' => true,
 			'has_archive' => true,
-			'supports' => array('title', 'editor', 'thumbnail', 'post-formats', 'excerpt', 'comments')
+			'supports' => array('title', 'editor', 'thumbnail', 'post-formats', 'excerpt', 'comments'),
+			'taxonomies' => array( 'category', 'post_tag' )
 			)
 		);
 
@@ -69,4 +72,30 @@
 			'supports' => array('title', 'editor', 'thumbnail', 'post-formats', 'excerpt', 'custom-fields')
 			)
 		);
+
 	}
+
+	if ( ! function_exists( 'portfolio_comment' ) ) :
+
+		function portfolio_comment( $comment, $args, $depth ) { ?>
+			
+			<li class="comment">
+
+				<figure>
+					<img src="<?php echo( get_bloginfo('template_directory') ); ?>/images/icon_unknown.jpg" width="60" height="60" alt="Image de profil" title="Image de profil" />
+				</figure>
+
+				<p class="metadata">
+					<span class="comment-author" itemprop="author"><?php comment_author() ?></span> <span class="comment-time" itemprop="datePublished"><?php comment_date(); ?></span>
+				</p>
+
+				<div class="comment-text" itemscope="description">
+					<?php comment_text(); ?>
+				</div>
+			
+			</li>			
+
+			<?php
+		}
+
+	endif;

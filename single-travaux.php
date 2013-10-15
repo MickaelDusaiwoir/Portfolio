@@ -9,10 +9,6 @@
 	<h1 class="hidden"><?php _e('Page du projet : '). the_title() ; ?></h1>
 
 	<div id="container" role="main">
-
-		<?php 
-			include 'banner.php';
-		?>
 		
 		<?php
 		    if (have_posts()):
@@ -22,15 +18,25 @@
 
 					<article id="single_travaux">
 						
-						<figure>
-							
-							<?php 
-								$src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-							?>
+						<div id="col_left">
 
-							<a href="<?php echo $src[0]; ?>" title="<?php _e('Voir l\'image dans sa taille d\'origine'); ?>" class="thumbnail" ><?php the_post_thumbnail( 'middle_img', array( 'itemprop' => 'image')); ?></a>
+							<figure>
+								
+								<?php 
+									$src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'light_box');
+								?>
 
-						</figure>
+								<a href="<?php echo $src[0]; ?>" title="<?php _e('Voir l\'image dans sa taille d\'origine'); ?>" class="thumbnail" ><?php the_post_thumbnail( 'middle_img', array( 'itemprop' => 'image')); ?></a>
+
+							</figure>
+
+							<div id="container_comment" >
+
+						    	<?php comments_template( '', true ); ?>
+
+							</div>
+
+						</div>
 
 						<div>
 
@@ -49,12 +55,6 @@
 		        wp_reset_postdata();
 		    endif;
 	    ?>
-
-	    <div id="container_comment" >
-
-	    	<?php comments_template( '', true ); ?>
-
-		</div>
 
 	</div>
 

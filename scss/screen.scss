@@ -1,6 +1,6 @@
 @import "compass";
 @import "compass/layout.scss";
-@import "../css/normalize.css";
+@import "normalize";
 @import "mixins";
 
 /* Système de grille composé de 12 colonnes */
@@ -546,11 +546,18 @@ body {
 
 #portfolio {
 
+	& img {
+		
+		border: 5px solid #fdfdfd;
+	}
+
 	@include generateGrid(12);
 
 	& a {
 
-		text-decoration: none;
+		text-decoration: none;		
+		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 3px, $color : rgba( 0, 0, 0, 0.4 ) );
+		line-height: 0;
 
 	}
 
@@ -560,10 +567,6 @@ body {
 		float: left;
 		margin: $gutter/2 0;
 		
-		&:nth-child( n + 3 ) {
-			margin-right: 0;
-		}
-
 	}
 
 	.small_img_2 {
@@ -590,6 +593,7 @@ body {
 		padding: 0.25em 0 0.25em 1em;
 
 		position: absolute;
+		line-height: 1.5;
 
 		background-color: rgba( 0, 0, 0, 0.3 );
 		color: white;
@@ -618,7 +622,7 @@ body {
 		bottom: 6px;
 		left: -( ( ( 4 * $colWidth ) + ( $gutter * 3 ) ));
 
-		transition: left linear 0.5s;
+		transition: left linear 0.3s;
 
 	}
 
@@ -642,10 +646,10 @@ body {
 		
 		width: ( ( 6 * $colWidth ) + ( $gutter * 5 ) ) - 15 ;
 
-		bottom: 0;
+		bottom: 5px;
 		left: -( ( ( 6 * $colWidth ) + ( $gutter * 5 ) ));
 
-		transition: left linear 0.5s;
+		transition: left linear 0.3s;
 
 	}
 
@@ -663,18 +667,17 @@ body {
 #single_travaux {
 
 	@include generateGrid(12);
-	margin: $gutter/2;
+	margin: $gutter $gutter/2 $gutter/2 $gutter/2;
 
-	& figure {
+	& figure img {
 
-		@include generateGrid(6);
-		margin: 0 $gutter/2 0 0;
-		float: left;
+		vertical-align: middle;
+	}
 
-		& img {
+	& .thumbnail img {
 
-			vertical-align: middle;
-		}
+		border: 5px solid white;
+		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 3px, $color : rgba( 0, 0, 0, 0.4 ) );
 	}
 
 	& div {
@@ -683,6 +686,12 @@ body {
 		margin: 0 0 0 $gutter/2;
 		float: right;
 
+	}
+
+	& #col_left {
+		@include generateGrid(6);
+		margin: 0 $gutter/2 0 0;
+		float: left;
 	}
 
 	& h2, & h3 {
@@ -700,15 +709,31 @@ body {
 		margin: $gutter/2 0;
 	}
 
-}
+	#container_comment {
 
-#container_comment {
+		display: inline-block;
+		margin-top: $gutter;
+		margin-bottom: $gutter;
 
-	@include generateGrid(12);
+	}
+
+	#respond {
+	
+	@include generateGrid(6);
+	float: right;
+	margin-right: 0;
 	margin-top: $gutter/2;
-	margin-bottom: $gutter;
+
+	& h3 {
+
+		margin-top: 0;
+		margin-bottom: 0.4em;
+	}
 
 }
+
+}
+
 
 #comments {
 
@@ -728,6 +753,7 @@ body {
 	& h2 {
 
 		margin-top: 0;
+		margin-bottom: $gutter/2;
 
 	}
 
@@ -742,6 +768,8 @@ body {
 
 		padding: $gutter/2 0;
 		margin: $gutter/2 0;
+
+		display: inline-block;
 
 		min-height: $colWidth;
 
@@ -771,7 +799,7 @@ body {
 
 	& .metadata {
 
-		& .author {
+		& .comment-author {
 			
 			font-size: 1.1em;
 			color: #2793e6;
@@ -781,7 +809,7 @@ body {
 			margin-left: 0;
 		}
 
-		& .time {
+		& .comment-time {
 			font-size: 0.7em;
 			color: #999;
 			float: right;
@@ -792,22 +820,9 @@ body {
 
 }
 
-#respond {
-	
-	@include generateGrid(6);
-	float: right;
-	margin-right: 0;
-
-	& h3 {
-
-		margin-top: 0;
-	}
-
-}
-
 #commentform {
 
-	& .logged-in-as, & .form-allowed-tags, & .comment-notes {
+	& .logged-in-as, & .form-allowed-tags, & .comment-notes, & .comment-form-url {
 
 		display: none;
 	}
@@ -833,10 +848,14 @@ body {
 	
 	& p {
 
-		margin: 0 0 $gutter 0;
+		margin: 0 0 $gutter/2 0;
 		display: block;
 		clear: both;
 
+	}
+
+	& textarea {
+		 resize: none; 
 	}
 
 }

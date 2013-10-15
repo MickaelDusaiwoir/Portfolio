@@ -8,31 +8,18 @@
 
 		<ol id="all-comments">
 
-			<?php 
-				while ( have_comments() ) : the_comment();
-			?>
-				
-				<li class="comment" >
-
-					<figure>
-						<img src="<?php echo( get_bloginfo('template_directory') ); ?>/images/icon_unknown.jpg" width="60" height="60" alt="Image de profil" title="Image de profil" />
-					</figure>
-
-					<p class="metadata">
-						<span class="author" itemprop="author"><?php comment_author() ?></span> <span class="time" itemprop="datePublished"><?php comment_date(); ?></span>
-					</p>
-
-					<div class="comment-text" itemscope="description">
-						<?php comment_text(); ?>
-					</div>
-
-				</li>
-
-			<?php 
-				endwhile;
-			?>
+			<?php wp_list_comments('type=comment&callback=portfolio_comment'); ?>
 
 		</ol>
+
+
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
+			<nav id="comment-nav-above">
+				<h1 class="assistive-text hidden"><?php _e( 'Comment navigation', 'portfolio' ); ?></h1>
+				<div class="nav-previous"><?php previous_comments_link( __( '&larr; Anciens commentaires', 'portfolio' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( __( 'Commentaires r&eacute;cents &rarr;', 'portfolio' ) ); ?></div>
+			</nav>
+		<?php endif; // check for comment navigation ?>
 
 	<?php 
 		else :
