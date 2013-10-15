@@ -28,7 +28,7 @@
 								$src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 							?>
 
-							<a href="<?php echo $src[0]; ?>" title="<?php _e('Voir l\'image dans sa taille d\'origine'); ?>"><?php the_post_thumbnail( 'middle_img', array( 'itemprop'=> 'image' )); ?></a>
+							<a href="<?php echo $src[0]; ?>" title="<?php _e('Voir l\'image dans sa taille d\'origine'); ?>" class="thumbnail" ><?php the_post_thumbnail( 'middle_img', array( 'itemprop' => 'image')); ?></a>
 
 						</figure>
 
@@ -46,10 +46,25 @@
 
 		<?php
 		        endwhile;
+		        wp_reset_postdata();
 		    endif;
 	    ?>
 
+	    <div id="container_comment" >
+
+	    	<?php comments_template( '', true ); ?>
+
+		</div>
+
 	</div>
+
+	<script type="text/javascript" src="<?php echo( get_bloginfo('template_directory') ); ?>/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo( get_bloginfo('template_directory') ); ?>/js/jquery.heplbox.js"></script>
+	<script>
+        jQuery( function() {
+            jQuery( '#single_travaux a.thumbnail' ).heplbox();
+        } );
+    </script>
 
 <?php 
 	get_footer(); 

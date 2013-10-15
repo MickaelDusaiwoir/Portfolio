@@ -663,7 +663,7 @@ body {
 #single_travaux {
 
 	@include generateGrid(12);
-	margin-top: $gutter/2;
+	margin: $gutter/2;
 
 	& figure {
 
@@ -685,15 +685,146 @@ body {
 
 	}
 
-	& h2 {
+	& h2, & h3 {
+
+		margin: $gutter/2 0;
+	}
+
+	& h2:first-child {
 
 		margin-top: 0;
-		margin-bottom: $gutter/2;
 	}
 
 	& p {
 		
 		margin: $gutter/2 0;
+	}
+
+}
+
+#container_comment {
+
+	@include generateGrid(12);
+	margin-top: $gutter/2;
+	margin-bottom: $gutter;
+
+}
+
+#comments {
+
+	@include generateGrid(6);
+	margin-left: 0;
+
+	float: left;
+
+	& #no_comment {
+
+		font-weight: bold;
+		font-style: italic;
+		font-size: 1.1em;
+		text-align: center;
+	}
+
+	& h2 {
+
+		margin-top: 0;
+
+	}
+
+	& ol {
+
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	& li {
+
+		padding: $gutter/2 0;
+		margin: $gutter/2 0;
+
+		min-height: $colWidth;
+
+		background-color: white;
+
+		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 3px, $color : rgba( 0, 0, 0, 0.4 ) );
+		@include border-radius(10px);
+	}
+
+	& figure {
+
+		@include generateGrid(1);
+		margin-left: 0;
+		float: left;
+	}
+
+	& li p , & li div {
+		
+		@include generateGrid(5);
+		margin-right: 0;
+
+	}
+
+	& div p {
+		margin: $gutter/2 0;
+	}
+
+	& .metadata {
+
+		& .author {
+			
+			font-size: 1.1em;
+		}
+
+
+	}
+
+}
+
+#respond {
+	
+	@include generateGrid(6);
+	float: right;
+	margin-right: 0;
+
+	& h3 {
+
+		margin-top: 0;
+	}
+
+}
+
+#commentform {
+
+	& .logged-in-as, & .form-allowed-tags, & .comment-notes {
+
+		display: none;
+	}
+
+	& label, & input, & textarea {
+
+		@include generateGrid(6);
+		margin: 0;
+		display: block;
+		@include box-sizing(border-box);
+	}
+
+	& label {
+
+		margin: $gutter/2 0;
+	}
+
+	& input, & textarea {
+
+		padding: 0.25em 0 0.25em 0.5em;
+
+	}
+	
+	& p {
+
+		margin: 0 0 $gutter 0;
+		display: block;
+		clear: both;
 
 	}
 
