@@ -774,8 +774,19 @@ body {
 		& .author {
 			
 			font-size: 1.1em;
+			color: #2793e6;
+			text-transform: capitalize;
+
+			@include generateGrid(3);
+			margin-left: 0;
 		}
 
+		& .time {
+			font-size: 0.7em;
+			color: #999;
+			float: right;
+			margin-right: $gutter/2;
+		}
 
 	}
 
