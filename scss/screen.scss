@@ -20,7 +20,7 @@ $colWidth : 60px;
 body {
 	font: normal 15px Helvetica, Arial, Sans-Serif;
 	line-height: 1.5;
-	background-image: url('../images/grid_paper.png');
+	background-image: url('../images/wood.png');
 }
 
 #header div, #footer div, #container {
@@ -32,8 +32,15 @@ body {
 
 #header, #footer {
 
-	background-image: url('../images/blackorchid.png');
+	background-image: url('../images/subtle_carbon.png');
 
+}
+
+body #container {
+
+	margin: $gutter/2 auto;
+
+	background-image: url('../images/grid_paper.png'); 
 }
 
 #container:after, #header:after {
@@ -104,7 +111,7 @@ body {
 
 	@include generateGrid(12);
 	margin-bottom: $gutter/2;
-	margin-top: $gutter;
+	margin-top: $gutter/2;
 
 	& figure img {
 		vertical-align: middle;
@@ -318,9 +325,10 @@ body {
 	margin-bottom: $gutter/2;
 	margin-top: $gutter/2;
 
-	& h2 {
+	& h2, & h3 {
 
 		margin-top: 0;
+		margin-bottom: $gutter/2;
 
 	}
 
@@ -342,6 +350,11 @@ body {
 
 		}
 
+	}
+
+	& article:last-child {
+
+		margin-bottom: $gutter/2;
 	}
 
 	& article:after {
@@ -366,25 +379,58 @@ body {
 
 
 
-	& div {
+	& .extrait {
 
-		@include generateGrid(8);
+		@include generateGrid(5);
 		@include box-sizing(border-box);
-
-		margin-right: 0;
-
-		padding-right: $gutter/2;
 
 		vertical-align: top;
 
+		float: left;	
+	}
+
+	& p {
+		
+		margin: $gutter/2 0;
+	}
+
+	& .techniques {
+
+		@include generateGrid(3);
+		@include box-sizing(border-box);
+
+		margin: 0 0 0 $gutter/2;
 		float: right;
 
-		& div {
-			
-		padding-left:  $gutter/2;
+		& ul {
 
+			margin: 0;
+			padding: 0;
+
+			list-style: none;
 		}
-	
+
+		& li {
+
+			@include generateGrid(1);
+
+			&:nth-child(odd){
+
+				margin-left: 0;
+			}
+
+			&:nth-child(even) {
+
+				margin-left: 0;
+			}
+		}
+
+		& .no_tech {
+
+			@include generateGrid(3);
+			margin: 0 auto;
+			font-size: 0.8em;
+		}
 	}
 
 }
@@ -393,7 +439,7 @@ body {
 
 #footer {
 
-	margin-top: 2em;
+	margin-top: $gutter/2;
 
 	& p {
 
@@ -685,18 +731,20 @@ body {
 		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 3px, $color : rgba( 0, 0, 0, 0.4 ) );
 	}
 
-	& div {
+	& figure, & #container_comment {
 
+		@include generateGrid(6);
+		margin: 0 $gutter/2 0 0 ;
+		float: left;
+
+	}
+
+	& #col_right {
 		@include generateGrid(6);
 		margin: 0 0 0 $gutter/2;
 		float: right;
 
-	}
-
-	& #col_left {
-		@include generateGrid(6);
-		margin: 0 $gutter/2 0 0;
-		float: left;
+		min-height: 26.5em;
 	}
 
 	& h2, & h3 {
@@ -714,28 +762,31 @@ body {
 		margin: $gutter/2 0;
 	}
 
-	#container_comment {
+	& #container_comment {
 
 		display: inline-block;
-		margin-top: $gutter;
-		margin-bottom: $gutter;
+		margin: $gutter 0;
 
 	}
 
-	#respond {
+	& #comments {
+		margin-left: 0;
+	}
+
+	& #respond {
 	
-	@include generateGrid(6);
-	float: right;
-	margin-right: 0;
-	margin-top: $gutter/2;
+		@include generateGrid(6);
+		float: right;
+		margin-right: 0;
+		margin-top: $gutter/2;
 
-	& h3 {
+		& h3 {
 
-		margin-top: 0;
-		margin-bottom: 0.4em;
+			margin-top: 0;
+			margin-bottom: 0.4em;
+		}
+
 	}
-
-}
 
 }
 
@@ -744,8 +795,6 @@ body {
 
 	@include generateGrid(6);
 	margin-left: 0;
-
-	float: left;
 
 	& #no_comment {
 
@@ -837,18 +886,21 @@ body {
 		@include generateGrid(6);
 		margin: 0;
 		display: block;
-		@include box-sizing(border-box);
+		@include box-sizing(border-box);	
 	}
 
 	& label {
 
 		margin: $gutter/2 0;
+		font-style: oblique;
+		font-weight: bold
 	}
 
 	& input, & textarea {
 
 		padding: 0.25em 0 0.25em 0.5em;
 
+		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 3px, $color : rgba( 0, 0, 0, 0.5 ) );
 	}
 	
 	& p {

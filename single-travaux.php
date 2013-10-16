@@ -18,33 +18,29 @@
 
 					<article id="single_travaux">
 						
-						<div id="col_left">
+						<figure>
+							
+							<?php 
+								$src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'light_box');
+							?>
 
-							<figure>
-								
-								<?php 
-									$src = wp_get_attachment_image_src(get_post_thumbnail_id(), 'light_box');
-								?>
+							<a href="<?php echo $src[0]; ?>" title="<?php _e('Voir l\'image dans sa taille d\'origine'); ?>" class="thumbnail" ><?php the_post_thumbnail( 'middle_img', array( 'itemprop' => 'image')); ?></a>
 
-								<a href="<?php echo $src[0]; ?>" title="<?php _e('Voir l\'image dans sa taille d\'origine'); ?>" class="thumbnail" ><?php the_post_thumbnail( 'middle_img', array( 'itemprop' => 'image')); ?></a>
+						</figure>
 
-							</figure>
-
-							<div id="container_comment" >
-
-						    	<?php comments_template( '', true ); ?>
-
-							</div>
-
-						</div>
-
-						<div>
+						<div id="col_right">
 
 							<h2>
 								<?php the_title(); ?>
 							</h2>
 							
 							<?php the_content(); ?>
+
+						</div>
+
+						<div id="container_comment" >
+
+					    	<?php comments_template( '', true ); ?>
 
 						</div>
 

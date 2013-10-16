@@ -80,7 +80,7 @@
 
 							</figure>
 
-							<div>
+							<div class="extrait" >
 
 								<h2 role="heading" aria-level="1" class="post-title" itemprop="name">
 									<a href="<?php the_permalink(); ?>" title="Pour suivre la lecture de <?php the_title(); ?>" itemprop="url" ><?php the_title(); ?></a>
@@ -93,6 +93,47 @@
 								</div>
 
 							</div>
+							
+							<section class="techniques" >
+
+								<h3>
+									Techniques utilis&eacute;es
+								</h3>
+
+								<ul>
+
+									<?php 
+
+										$id = $post->ID;
+
+										$i = 1;
+
+										$terms = wp_get_post_terms( $id , 'techniques', array( 'fields' => 'names' ) );
+
+										if ( count($terms) ) :
+
+											foreach ($terms as $term ) : ?>
+
+												<li><?php echo($term); ?></li>
+
+										<?php
+												$i = $i =< 3 ? $i++ : 1;
+
+											endforeach;
+
+										else : ?>
+
+											<li class="no_tech"><?php _e('Aucunes techniques n\'a &eacute;t&eacute; pr&eacute;cis&eacute;es') ?></li>
+
+									<?php
+
+										endif;
+
+									 ?>
+
+								</ul>
+
+							</section>
 
 						</article>				
 			<?php

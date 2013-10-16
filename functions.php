@@ -99,3 +99,27 @@
 		}
 
 	endif;
+
+	add_action( 'init', 'create_Travaux_tax' );
+
+	function create_Travaux_tax () {
+		register_taxonomy(
+			'techniques',
+			'travaux',
+			array(
+				'label' => __( 'Techniques' ),
+				'rewrite' => array( 'slug' => 'techniques' ),
+				'hierarchical' => true,
+			)
+		);
+
+		register_taxonomy(
+			'cms',
+			'travaux',
+			array(
+				'label' => __( 'CMS' ),
+				'rewrite' => array( 'slug' => 'cms' ),
+				'hierarchical' => true,
+			)
+		);
+	}
