@@ -413,16 +413,17 @@ body #container {
 		& li {
 
 			@include generateGrid(1);
+			float: left;
+		}
 
-			&:nth-child(odd){
+		& .tech_1 , & .tech_3 {
 
-				margin-left: 0;
-			}
+			margin: 0 0 $gutter/2 0;
+		}
 
-			&:nth-child(even) {
+		& .tech_2 {
 
-				margin-left: 0;
-			}
+			margin: 0 1em $gutter/2 1em;
 		}
 
 		& .no_tech {

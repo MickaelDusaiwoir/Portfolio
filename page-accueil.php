@@ -106,18 +106,19 @@
 
 										$id = $post->ID;
 
-										$i = 1;
-
 										$terms = wp_get_post_terms( $id , 'techniques', array( 'fields' => 'names' ) );
 
 										if ( count($terms) ) :
 
-											foreach ($terms as $term ) : ?>
+											$i = 1;
 
-												<li><?php echo($term); ?></li>
+											foreach ( $terms as $term ) : ?>
+
+
+												<li class="tech_<?php echo($i); ?>"><?php echo($term); ?></li>
 
 										<?php
-												$i = $i =< 3 ? $i++ : 1;
+												$i = $i < 3 ? $i = $i + 1 : 1;
 
 											endforeach;
 
