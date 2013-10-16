@@ -586,7 +586,9 @@ body {
 		margin: $gutter/2 $gutter $gutter/2 0;
 	}
 
-	& figcaption {
+	& h2 {
+
+		font-size: 1em;
 
 		display: block;
 		margin: 0.5em 0 0 0;
@@ -598,10 +600,13 @@ body {
 		background-color: rgba( 0, 0, 0, 0.3 );
 		color: white;
 		font-style: italic;
+		font-weight: normal;
+
+		text-transform: capitalize;
 
 	}
 
-	& .small_img figure {
+	& .small_img article {
 
 		overflow: hidden;
 
@@ -615,7 +620,7 @@ body {
 
 	}
 
-	& .small_img figcaption {
+	& .small_img h2 {
 		
 		width: ( ( 4 * $colWidth ) + ( $gutter * 3 ) ) - 15 ;
 
@@ -626,13 +631,13 @@ body {
 
 	}
 
-	& .small_img:hover figcaption, & .middle_img:hover figcaption {
+	& .small_img:hover h2, & .middle_img:hover h2 {
 
 		left: 0;
 
 	}
 
-	& .middle_img figure {
+	& .middle_img article {
 
 		@include generateGrid(6);
 
@@ -642,7 +647,7 @@ body {
 
 	}
 
-	& .middle_img figcaption {
+	& .middle_img h2 {
 		
 		width: ( ( 6 * $colWidth ) + ( $gutter * 5 ) ) - 15 ;
 
@@ -654,7 +659,7 @@ body {
 	}
 
 
-	& figure {
+	& article {
 
 		position: relative;
 

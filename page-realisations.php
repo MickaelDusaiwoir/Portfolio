@@ -38,13 +38,13 @@
 							?>
 
 								<a href="<?php the_permalink(); ?>" class="small_img <?php echo ('small_img_'.$i); ?>" itemscope itemprop="http://schema.org/CreativeWork" itemprop="url" title="Voir l'entièreter du projet : <?php the_title(); ?>" >
-									<figure>
+									<article>
 
 									  <?php the_post_thumbnail('small_img', array( 'itemprop'=> 'image' ) ); ?>
 
-									  <figcaption itemprop="name"><?php the_title(); ?></figcaption>
+									  <h2 itemprop="name"><?php the_title(); ?></h2>
 
-									</figure></a>
+									</article></a>
 
 							<?php 
 
@@ -54,13 +54,13 @@
 							?>
 
 								<a href="<?php the_permalink(); ?>" class="middle_img <?php echo ('middle_img_'.$u); ?>" itemscope itemprop="http://schema.org/CreativeWork" itemprop="url" title="Voir l'entièreter du projet : <?php the_title(); ?>" >
-									<figure>
+									<article>
 
 									  <?php the_post_thumbnail('middle_img', array( 'itemprop'=> 'image' ) ); ?>
 
-									  <figcaption itemprop="name"><?php the_title(); ?></figcaption>
+									  <h2 itemprop="name"><?php the_title(); ?></h2>
 
-									</figure></a>
+									</article></a>
 
 
 							<?php 

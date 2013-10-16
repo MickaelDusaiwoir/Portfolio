@@ -948,7 +948,8 @@ html, body {
 #portfolio .middle_img_1 {
   margin: 10px 20px 10px 0; }
 /* line 589, ../scss/screen.scss */
-#portfolio figcaption {
+#portfolio h2 {
+  font-size: 1em;
   display: block;
   margin: 0.5em 0 0 0;
   padding: 0.25em 0 0.25em 1em;
@@ -956,85 +957,87 @@ html, body {
   line-height: 1.5;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
-  font-style: italic; }
-/* line 604, ../scss/screen.scss */
-#portfolio .small_img figure {
+  font-style: italic;
+  font-weight: normal;
+  text-transform: capitalize; }
+/* line 609, ../scss/screen.scss */
+#portfolio .small_img article {
   overflow: hidden;
   height: auto; }
-/* line 612, ../scss/screen.scss */
+/* line 617, ../scss/screen.scss */
 #portfolio .small_img img, #portfolio .middle_img img {
   vertical-align: middle; }
-/* line 618, ../scss/screen.scss */
-#portfolio .small_img figcaption {
+/* line 623, ../scss/screen.scss */
+#portfolio .small_img h2 {
   width: 285px;
   bottom: 6px;
   left: -300px;
   transition: left linear 0.3s; }
-/* line 629, ../scss/screen.scss */
-#portfolio .small_img:hover figcaption, #portfolio .middle_img:hover figcaption {
+/* line 634, ../scss/screen.scss */
+#portfolio .small_img:hover h2, #portfolio .middle_img:hover h2 {
   left: 0; }
-/* line 635, ../scss/screen.scss */
-#portfolio .middle_img figure {
+/* line 640, ../scss/screen.scss */
+#portfolio .middle_img article {
   width: 460px;
   margin: 0 10px;
   display: inline-block;
   margin: 0;
   overflow: hidden; }
-/* line 645, ../scss/screen.scss */
-#portfolio .middle_img figcaption {
+/* line 650, ../scss/screen.scss */
+#portfolio .middle_img h2 {
   width: 445px;
   bottom: 5px;
   left: -460px;
   transition: left linear 0.3s; }
-/* line 657, ../scss/screen.scss */
-#portfolio figure {
+/* line 662, ../scss/screen.scss */
+#portfolio article {
   position: relative; }
 
 /*  Single Travaux  */
-/* line 667, ../scss/screen.scss */
+/* line 672, ../scss/screen.scss */
 #single_travaux {
   width: 940px;
   margin: 0 10px;
   display: inline-block;
   margin: 20px 10px 10px 10px; }
-/* line 672, ../scss/screen.scss */
+/* line 677, ../scss/screen.scss */
 #single_travaux figure img {
   vertical-align: middle; }
-/* line 677, ../scss/screen.scss */
+/* line 682, ../scss/screen.scss */
 #single_travaux .thumbnail img {
   border: 5px solid white;
   -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); }
-/* line 683, ../scss/screen.scss */
+/* line 688, ../scss/screen.scss */
 #single_travaux div {
   width: 460px;
   margin: 0 10px;
   display: inline-block;
   margin: 0 0 0 10px;
   float: right; }
-/* line 691, ../scss/screen.scss */
+/* line 696, ../scss/screen.scss */
 #single_travaux #col_left {
   width: 460px;
   margin: 0 10px;
   display: inline-block;
   margin: 0 10px 0 0;
   float: left; }
-/* line 697, ../scss/screen.scss */
+/* line 702, ../scss/screen.scss */
 #single_travaux h2, #single_travaux h3 {
   margin: 10px 0; }
-/* line 702, ../scss/screen.scss */
+/* line 707, ../scss/screen.scss */
 #single_travaux h2:first-child {
   margin-top: 0; }
-/* line 707, ../scss/screen.scss */
+/* line 712, ../scss/screen.scss */
 #single_travaux p {
   margin: 10px 0; }
-/* line 712, ../scss/screen.scss */
+/* line 717, ../scss/screen.scss */
 #single_travaux #container_comment {
   display: inline-block;
   margin-top: 20px;
   margin-bottom: 20px; }
-/* line 720, ../scss/screen.scss */
+/* line 725, ../scss/screen.scss */
 #single_travaux #respond {
   width: 460px;
   margin: 0 10px;
@@ -1042,34 +1045,34 @@ html, body {
   float: right;
   margin-right: 0;
   margin-top: 10px; }
-/* line 727, ../scss/screen.scss */
+/* line 732, ../scss/screen.scss */
 #single_travaux #respond h3 {
   margin-top: 0;
   margin-bottom: 0.4em; }
 
-/* line 738, ../scss/screen.scss */
+/* line 743, ../scss/screen.scss */
 #comments {
   width: 460px;
   margin: 0 10px;
   display: inline-block;
   margin-left: 0;
   float: left; }
-/* line 745, ../scss/screen.scss */
+/* line 750, ../scss/screen.scss */
 #comments #no_comment {
   font-weight: bold;
   font-style: italic;
   font-size: 1.1em;
   text-align: center; }
-/* line 753, ../scss/screen.scss */
+/* line 758, ../scss/screen.scss */
 #comments h2 {
   margin-top: 0;
   margin-bottom: 10px; }
-/* line 760, ../scss/screen.scss */
+/* line 765, ../scss/screen.scss */
 #comments ol {
   list-style: none;
   margin: 0;
   padding: 0; }
-/* line 767, ../scss/screen.scss */
+/* line 772, ../scss/screen.scss */
 #comments li {
   padding: 10px 0;
   margin: 10px 0;
@@ -1084,23 +1087,23 @@ html, body {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   border-radius: 10px; }
-/* line 782, ../scss/screen.scss */
+/* line 787, ../scss/screen.scss */
 #comments figure {
   width: 60px;
   margin: 0 10px;
   display: inline-block;
   margin-left: 0;
   float: left; }
-/* line 789, ../scss/screen.scss */
+/* line 794, ../scss/screen.scss */
 #comments li p, #comments li div {
   width: 380px;
   margin: 0 10px;
   display: inline-block;
   margin-right: 0; }
-/* line 796, ../scss/screen.scss */
+/* line 801, ../scss/screen.scss */
 #comments div p {
   margin: 10px 0; }
-/* line 802, ../scss/screen.scss */
+/* line 807, ../scss/screen.scss */
 #comments .metadata .comment-author {
   font-size: 1.1em;
   color: #2793e6;
@@ -1109,17 +1112,17 @@ html, body {
   margin: 0 10px;
   display: inline-block;
   margin-left: 0; }
-/* line 812, ../scss/screen.scss */
+/* line 817, ../scss/screen.scss */
 #comments .metadata .comment-time {
   font-size: 0.7em;
   color: #999;
   float: right;
   margin-right: 10px; }
 
-/* line 825, ../scss/screen.scss */
+/* line 830, ../scss/screen.scss */
 #commentform .logged-in-as, #commentform .form-allowed-tags, #commentform .comment-notes, #commentform .comment-form-url {
   display: none; }
-/* line 830, ../scss/screen.scss */
+/* line 835, ../scss/screen.scss */
 #commentform label, #commentform input, #commentform textarea {
   width: 460px;
   margin: 0 10px;
@@ -1129,17 +1132,17 @@ html, body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-/* line 838, ../scss/screen.scss */
+/* line 843, ../scss/screen.scss */
 #commentform label {
   margin: 10px 0; }
-/* line 843, ../scss/screen.scss */
+/* line 848, ../scss/screen.scss */
 #commentform input, #commentform textarea {
   padding: 0.25em 0 0.25em 0.5em; }
-/* line 849, ../scss/screen.scss */
+/* line 854, ../scss/screen.scss */
 #commentform p {
   margin: 0 0 10px 0;
   display: block;
   clear: both; }
-/* line 857, ../scss/screen.scss */
+/* line 862, ../scss/screen.scss */
 #commentform textarea {
   resize: none; }
