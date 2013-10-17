@@ -2,11 +2,11 @@
 	get_header(); 
 ?>
 
-<?php 
-	include 'header_nav.php'; 
-?>
-
 	<h1 class="hidden"><?php _e('Page du projet : '). the_title() ; ?></h1>
+	
+	<?php 
+		include 'header_nav.php'; 
+	?>
 
 	<div id="container" role="main">
 		

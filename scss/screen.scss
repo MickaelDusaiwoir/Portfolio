@@ -149,7 +149,7 @@ body #container {
 
 		line-height: 1.6;
 
-		& h1 {
+		& h1, & h2 {
 
 			font-size: 1.85em;
 
@@ -325,6 +325,12 @@ body #container {
 	margin-bottom: $gutter/2;
 	margin-top: $gutter/2;
 
+	& h1 {
+
+		margin: 0 0 $gutter 0;
+
+	}
+
 	& h2, & h3 {
 
 		margin-top: 0;
@@ -343,12 +349,6 @@ body #container {
 		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 3px, $color : rgba( 0, 0, 0, 0.4 ) );
 
 		background-color: white;
-
-		& h1 {
-
-			margin-top: 0;
-
-		}
 
 	}
 

@@ -2,11 +2,11 @@
 	get_header(); 
 ?>
 
-<?php 
-	include 'header_nav.php'; 
-?>
-
 	<h1 class="hidden" role="heading" aria-level="1"><?php _e('Page d\'accueil'); ?></h1>
+
+	<?php 
+		include 'header_nav.php'; 
+	?>	
 
 	<div id="container" role="main">
 
@@ -30,9 +30,9 @@
 			?>
 						<article class="post" id="<?php the_ID(); ?>" itemscope itemprop="http://schema.org/BlogPosting" >
 
-							<h1 role="heading" aria-level="1" class="post-title" itemprop="name">
+							<h2 role="heading" aria-level="1" class="post-title" itemprop="name">
 								<?php the_title(); ?></a>
-							</h1>
+							</h2>
 							
 							<div itemprop="description">
 

@@ -5,9 +5,9 @@
 		</figure>
 		<nav role="navigation" >
 			
-			<h1 class="hidden">
+			<h2 class="hidden">
 				Menu principal
-			</h1>
+			</h2>
 			
 			<?php 
 			
