@@ -97,7 +97,7 @@
 							<section class="techniques" >
 
 								<h3>
-									Techniques utilis&eacute;es
+									<?php _e('Techniques utilis&eacute;es'); ?>
 								</h3>
 
 								<ul>
@@ -133,6 +133,38 @@
 									 ?>
 
 								</ul>
+
+								<h3>
+									<abbr title="Content Management System">CMS</abbr> <?php _e('utilis&eacute;'); ?>
+								</h3>
+
+									<?php 
+
+										$terms = wp_get_post_terms( $id , 'cms', array( 'fields' => 'names' ) );
+
+										if ( count($terms) ) :
+
+											$i = 1;
+
+											foreach ( $terms as $term ) : ?>
+
+
+												<li class="tech_<?php echo($i); ?>"><?php echo($term); ?></li>
+
+										<?php
+												$i = $i < 3 ? $i = $i + 1 : 1;
+
+											endforeach;
+
+										else : ?>
+
+											<li class="no_cms"><?php _e('Aucun') ?></li>
+
+									<?php
+
+										endif;
+
+									 ?>
 
 							</section>
 

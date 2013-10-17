@@ -2,7 +2,7 @@
 	get_header(); 
 ?>
 
-	<h1 class="hidden"><?php _e('Page du projet : '). the_title() ; ?></h1>
+	<h1 class="hidden"><?php the_title() ; ?></h1>
 
 	<?php 
 		include 'header_nav.php'; 
@@ -10,11 +10,19 @@
 
 	<div id="container" role="main">
 
-		<?php 
-			include 'banner.php';
-		?>
+		<div id="contact">
 
-		
+			<h2>
+				Pour me contacter&nbsp;? C'est ici&nbsp;!
+			</h2>
+
+			<?php 
+
+				include "form_contact.php";
+
+			?>
+
+		</div>
 
 	</div>
 

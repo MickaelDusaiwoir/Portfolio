@@ -410,6 +410,16 @@ body #container {
 			list-style: none;
 		}
 
+		& ul:after {
+
+			
+		    display: block;
+		    overflow: hidden;
+			clear: both;
+			content: "";
+			height: 0;
+		}
+
 		& li {
 
 			@include generateGrid(1);
@@ -426,10 +436,10 @@ body #container {
 			margin: 0 1em $gutter/2 1em;
 		}
 
-		& .no_tech {
+		& .no_tech, & .no_cms {
 
 			@include generateGrid(3);
-			margin: 0 auto;
+			margin: 0 auto $gutter/2 auto;
 			font-size: 0.8em;
 		}
 	}
@@ -458,134 +468,19 @@ body #container {
 
 #contact {
 
-	@include generateGrid(8);
-	margin: 0 auto 1.5em auto;
-	display: block;
-
-}
-
-#contact_form {
-
-	& h1 {
-
-		font-size: 1.8em;
-
-	}
-	
-	display: block;
-
-	margin-left: 0;
-
-	& fieldset {
-
-		border: none;
-		margin: 0;
-		padding: 0;
-
-	}
-
-	& span {
-
-		@include generateGrid(4);
-		margin: 0;
-		
-		vertical-align: top;
-
-		&:nth-child(odd) {
-
-			margin-right: 14px;
-
-		}
-	}
-
-	& label {
-
-		display: block;
-		margin: 0.5em 0 0.5em 0;
-
-		text-transform: uppercase;
-
-	}
-
-	& input {
-		
-		width: ( 4 * $colWidth ) + ( 3 * $gutter) - 5px;
-
-		display: block;
-		margin: 0 0 1em 0;
-
-		padding: 0.5em 0 0.5em 5px;
-
-		border-width: 1px;
-
-		width: ( 4 * $colWidth ) + ( 3 * $gutter) - 5px;
-
-		&[type="submit"] {
-
-			padding-right: 0.25em;
-			display: block;
-			width: ( 4 * $colWidth ) + ( 3 * $gutter) + 2;
-
-		}
-
-	}
-
-	& textarea {
-		
-		resize: none;
-		padding: 0.5em 0 0 5px;
-		margin-bottom: 1em;
-		max-width: ( 4 * $colWidth ) + ( 3 * $gutter) - 5px;
-		border-width: 1px;
-		max-height: 182px;
-
-	}
-
-}
-
-#follow {
-
-	@include generateGrid(5);
-	margin: 0; 
-
-	vertical-align: top;
+	@include generateGrid(12);
+	margin-top: $gutter/2;
 
 	& h2 {
-
-		font-size: 1.4em;
-
+		margin: 0 0 $gutter;
 	}
 
-	& fieldset {
+	& form {
 
-		border: none;
-		margin: 0;
-		padding: 0;
-
-	}
-
-	& label {
+		@include generateGrid(10);
 		display: block;
-		margin: 1em 0 0.5em 0;
+		margin: 0 auto;
 	}
-
-	 & input {
-
-		@include generateGrid(4);
-		display: block;
-		margin: 0 0 1em 0;
-		padding: 0.25em 0 0.25em 0.25em;
-		border-width: 1px;
-
-		&[type="submit"] {
-
-			padding-right: 0.25em;
-			display: block;
-			width: ( 4 * $colWidth ) + ( 3 * $gutter) + 5;
-
-		}
-
-	 }
 
 }
 
@@ -771,6 +666,7 @@ body #container {
 	}
 
 	& #comments {
+
 		margin-left: 0;
 	}
 
@@ -852,7 +748,15 @@ body #container {
 		margin: $gutter/2 0;
 	}
 
+	& p , & div {
+			
+		@include box-sizing( border-box );
+		padding-right: $gutter/2;
+	}
+
 	& .metadata {
+
+		border-bottom: 1px solid rgba( 0, 0, 0, 0.1 );
 
 		& .comment-author {
 			
@@ -865,6 +769,8 @@ body #container {
 		}
 
 		& .comment-time {
+
+			margin-top: 0.5em;
 			font-size: 0.7em;
 			color: #999;
 			float: right;
@@ -902,6 +808,11 @@ body #container {
 		padding: 0.25em 0 0.25em 0.5em;
 
 		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 3px, $color : rgba( 0, 0, 0, 0.5 ) );
+	}
+
+	& input[type="submit"] {
+
+		box-shadow: none;
 	}
 	
 	& p {
