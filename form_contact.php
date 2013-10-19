@@ -17,6 +17,24 @@ if ( !empty( $_POST['submit'] ) ) {
 
     }
 
+    if ( !empty( $_POST['captcha'] ) ) {
+
+        if ( $_POST['captcha'] == 4 ) :
+
+            $erreur['captcha'] = FALSE;
+
+        else :
+
+            $erreur['captcha'] = TRUE;
+
+        endif;
+
+    } else {
+
+        $erreur['captcha'] = TRUE;
+    }
+
+
     if ( !empty( $_POST['mail'] ) ) {
 
         $Syntaxe =  "/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)" .
@@ -55,7 +73,7 @@ if ( !empty( $_POST['submit'] ) ) {
 
 // fonction mail
 
-if ( !empty( $nom ) && !empty( $mail ) && !empty( $msg ) ) {
+if ( !empty( $nom ) && !empty( $mail ) && !empty( $msg ) && $erreur['captcha'] == FALSE ) {
 
     $destinataire = 'mickael.dusaiwoir@student.hepl.be';
     $sujet = 'Titre du message';
@@ -87,10 +105,10 @@ if ( $envoyer == TRUE ) : ?>
 
     <a name="formulaire"></a>
 
-    <fieldset>
+    <fieldset id="left" >
 
         <label for="Nom"> 
-            Nom Prénom 
+            Nom et Prénom 
         </label>
 
         <input type="text" id="nom" placeholder="Ex : Mickael Dusaiwoir" name="nom" <?php
@@ -105,7 +123,7 @@ if ( isset( $nom ) ) {
             <?php endif; ?>
 
         <label for="mail">
-            Email
+            Adresse Email
         </label>
 
         <input type="email" id="mail" placeholder="Ex : xyz@exemple.com" name="mail" <?php
@@ -129,6 +147,22 @@ if ( isset( $nom ) ) {
             endif;
         ?>
 
+        <label for="captcha"> 
+            <?php _e('Combien fait'); ?> 2 + 2&nbsp;? 
+        </label>
+
+        <input type="number" id="captcha" placeholder="Ex: 10" name="captcha" min="0" max="10" />
+
+        <?php if ( $erreur['captcha'] == TRUE ): ?>
+
+            <p class="erreur"><?php _e('R&eacute;solvez ce calcul'); ?> </p>
+
+        <?php endif; ?>
+
+    </fieldset>
+
+    <fieldset id="right" >
+
         <label for="msg">
             Message
         </label>
@@ -145,7 +179,7 @@ if ( isset( $nom ) ) {
 
         <?php endif; ?>
 
-        <input type="submit" name="submit" id="envoyer" /> 
+        <input type="submit" name="submit" value="Je te contact" /> 
 
     </fieldset>
 

@@ -470,9 +470,13 @@ body #container {
 
 	@include generateGrid(12);
 	margin-top: $gutter/2;
+	margin-bottom: $gutter/2;
 
 	& h2 {
-		margin: 0 0 $gutter;
+
+		@include generateGrid(10);
+		display: block;
+		margin: $gutter auto $gutter/2 auto
 	}
 
 	& form {
@@ -480,6 +484,93 @@ body #container {
 		@include generateGrid(10);
 		display: block;
 		margin: 0 auto;
+
+		&:after {
+
+			display: block;
+			content: "";
+			height: 0;
+			clear: both;
+		}
+	}
+
+	& label, & input, & textarea {
+
+		@include box-sizing( border-box );
+		@include generateGrid(5);
+		margin: 0;
+	}
+
+	& label {
+
+		margin: $gutter/2 0 $gutter/4 0;
+		font-weight: bold;
+		font-style: italic;
+	}
+
+	& input, & textarea {
+
+		padding: 0.5em;
+	}
+
+	& #left, & #right {
+
+		@include generateGrid(5);
+		padding: 0;
+		border: none;
+	}
+
+	& #left {
+		
+		float: left;
+		margin-left: 0;
+	}
+
+	& #right {
+
+		float: right;
+		margin-right: 0;
+
+		& .erreur {
+
+			margin-bottom: $gutter/2;
+			margin-top: 0; 
+		}
+	}
+
+	& textarea {
+
+		resize: none;
+		margin-bottom: $gutter/2;
+		height: 7.3em;
+	}
+
+	& .erreur, & #envoyer {
+
+		@include box-sizing( border-box );
+		margin: $gutter/2 0 0 0;
+		padding: 0.25em;
+		text-align: center;		
+		font-weight: bold;
+	}
+
+	& .erreur {
+
+		color: #800;
+		background-color: #faa;
+	}
+
+	& #envoyer {
+
+		color: #080;
+		background-color: #afa;
+		font-size: 1.2em;
+		margin: $gutter/2 0;
+	}
+
+	& input[type='submit'] {
+
+		margin-top: 1.7em;
 	}
 
 }
