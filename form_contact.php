@@ -107,7 +107,7 @@ if ( $envoyer == TRUE ) : ?>
 
     <fieldset id="left" >
 
-        <label for="Nom"> 
+        <label for="nom"> 
             Nom et Prénom 
         </label>
 
