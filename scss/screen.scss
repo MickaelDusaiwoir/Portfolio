@@ -476,7 +476,7 @@ body #container {
 
 		@include generateGrid(10);
 		display: block;
-		margin: $gutter auto $gutter/2 auto
+		margin: $gutter auto 0 auto
 	}
 
 	& form {
@@ -503,16 +503,18 @@ body #container {
 
 	& label {
 
-		margin: $gutter/2 0 $gutter/4 0;
+		margin: $gutter 0 $gutter/4 0;
 		font-weight: bold;
 		font-style: italic;
 	}
 
 	& input, & textarea {
 
-		padding: 0.5em;
+		padding: 0.6em;
+		border: none;
+		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 3px, $color : rgba( 0, 0, 0, 0.4 ) );
 	}
-
+	
 	& #left, & #right {
 
 		@include generateGrid(5);
@@ -542,7 +544,7 @@ body #container {
 
 		resize: none;
 		margin-bottom: $gutter/2;
-		height: 7.3em;
+		height: 7.85em;
 	}
 
 	& .erreur, & #envoyer {
@@ -566,11 +568,20 @@ body #container {
 		background-color: #afa;
 		font-size: 1.2em;
 		margin: $gutter/2 0;
+		box-shadow: none;
 	}
 
 	& input[type='submit'] {
 
-		margin-top: 1.7em;
+		margin-top: 2.4em;
+		border: 1px solid #999;
+
+		&:hover {
+
+			color: #060;
+			background-color: #afa;
+			font-style: italic;
+		}
 	}
 
 }
