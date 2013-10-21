@@ -1025,3 +1025,67 @@ body #container {
 	}
 
 }
+
+/*  IPAD   */
+
+@media only screen and ( min-width : 768px ) and ( max-width : 959px ) {
+
+	$gutter : 12px;
+	$colWidth : 66px;
+
+	/*  max 10 colonne  */
+
+	#header div, #footer div, #container {
+
+		width: 768px;
+		margin: 0 auto;
+	}
+
+	#banner {
+
+		@include generateGrid(10);
+		margin-top: $gutter/2;
+		margin-bottom: $gutter/2;
+
+		& img {
+
+			width: 756px;
+		}
+	}
+
+	#presentation {
+
+		@include generateGrid(10);
+		margin-top: $gutter/2;
+
+		& article {
+
+			@include generateGrid(4);
+			margin-left: 0;
+		}
+
+		& #skill {
+
+			@include generateGrid(6);
+			margin-right: 0;
+
+			& li {
+
+				@include generateGrid(3);
+				margin: 0;
+
+				&:nth-child(odd) {
+
+					margin: 2.5em 0 0 0;
+				}
+
+				&:nth-child(even) {
+
+					margin: 2em 0 0 $gutter/6;
+
+				}
+			}
+		}
+	}
+
+}

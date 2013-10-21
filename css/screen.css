@@ -1315,3 +1315,53 @@ html, body {
 /* line 1023, ../scss/screen.scss */
 #commentform textarea {
   resize: none; }
+
+/*  IPAD   */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  /*  max 10 colonne  */
+  /* line 1038, ../scss/screen.scss */
+  #header div, #footer div, #container {
+    width: 768px;
+    margin: 0 auto; }
+
+  /* line 1044, ../scss/screen.scss */
+  #banner {
+    width: 768px;
+    margin: 0 6px;
+    display: inline-block;
+    margin-top: 6px;
+    margin-bottom: 6px; }
+  /* line 1050, ../scss/screen.scss */
+  #banner img {
+    width: 756px; }
+
+  /* line 1056, ../scss/screen.scss */
+  #presentation {
+    width: 768px;
+    margin: 0 6px;
+    display: inline-block;
+    margin-top: 6px; }
+  /* line 1061, ../scss/screen.scss */
+  #presentation article {
+    width: 300px;
+    margin: 0 6px;
+    display: inline-block;
+    margin-left: 0; }
+  /* line 1067, ../scss/screen.scss */
+  #presentation #skill {
+    width: 456px;
+    margin: 0 6px;
+    display: inline-block;
+    margin-right: 0; }
+  /* line 1072, ../scss/screen.scss */
+  #presentation #skill li {
+    width: 222px;
+    margin: 0 6px;
+    display: inline-block;
+    margin: 0; }
+  /* line 1077, ../scss/screen.scss */
+  #presentation #skill li:nth-child(odd) {
+    margin: 2.5em 0 0 0; }
+  /* line 1082, ../scss/screen.scss */
+  #presentation #skill li:nth-child(even) {
+    margin: 2em 0 0 2px; } }
