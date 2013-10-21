@@ -31,7 +31,7 @@
 						<article class="post" id="<?php the_ID(); ?>" itemscope itemprop="http://schema.org/BlogPosting" >
 
 							<h2 role="heading" aria-level="1" class="post-title" itemprop="name">
-								<?php the_title(); ?></a>
+								<?php the_title(); ?>
 							</h2>
 							
 							<div itemprop="description">
