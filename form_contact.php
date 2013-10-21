@@ -115,7 +115,7 @@ if ( $envoyer == TRUE ) : ?>
 if ( isset( $nom ) ) {
     echo('value="' . $nom . '"');
 }
-?>/>
+?> required />
             <?php if ( $erreur['nom'] == TRUE ): ?>
 
                 <p class="erreur">Entrez votre Nom et pr&eacute;nom</p>
@@ -130,7 +130,7 @@ if ( isset( $nom ) ) {
         if ( isset( $mail ) ) {
             echo 'value="' . $mail . '"';
         }
-        ?>/>
+        ?> required />
                <?php
                if ( $erreur['mail1'] == TRUE || $erreur['mail2'] ) :
 
@@ -151,7 +151,7 @@ if ( isset( $nom ) ) {
             <?php _e('Combien fait'); ?> 2 + 2&nbsp;? 
         </label>
 
-        <input type="number" id="captcha" placeholder="Ex: 10" name="captcha" min="0" max="10" />
+        <input type="number" id="captcha" placeholder="Ex: 10" name="captcha" min="0" max="10" required />
 
         <?php if ( $erreur['captcha'] == TRUE ): ?>
 
@@ -167,7 +167,7 @@ if ( isset( $nom ) ) {
             Message
         </label>
 
-        <textarea id="msg" rows="4" cols="58" placeholder="Que souhaitez vous me dire !!" name="msg"><?php
+        <textarea id="msg" rows="4" cols="58" placeholder="Que souhaitez vous me dire !!" name="msg" required ><?php
         if ( isset( $msg ) ) {
             echo ($msg);
         }

@@ -10,6 +10,10 @@
 
 	<div id="container" role="main">
 
+		<?php 
+			include 'banner.php';
+		?>
+
 		<div id="contact">
 
 			<h2>

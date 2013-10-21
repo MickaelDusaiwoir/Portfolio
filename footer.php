@@ -30,7 +30,7 @@
 
 	                    </div>
 
-	                    <input type="submit" value="S'abonner" name="subscribe" id="mc-embedded-subscribe" class="button">
+	                    <input type="submit" value="Go" name="subscribe" id="mc-embedded-subscribe" class="button">
 
 	                </form>
 

@@ -121,7 +121,7 @@ body #container {
 
 /*  Sticky footer  */
 
-@include sticky-footer( 40px, "#container", "#layout_footer", "#footer");
+@include sticky-footer( 80px, "#container", "#layout_footer", "#footer");
 
 /*  Titre de section caché  */ 
 
@@ -454,12 +454,94 @@ body #container {
 
 	& p {
 
-		@include generateGrid(12);
+		@include generateGrid(5);
 
 		text-align: center;
 		color: white;
-		margin: 0.75em 0 0.5em 0;
+		margin: 0.75em $gutter/2 0.5em $gutter/2;
 
+	}
+
+	& h3 {
+
+		margin-top: 0;
+		margin-bottom: $gutter/2;
+		color: white;
+		font-weight: normal;
+		font-style: italic;
+	}
+
+	& .mc-field-group{
+
+		@include generateGrid(3);
+		margin: 0 $gutter/4;
+
+	}
+
+	& #mc_embed_signup {
+
+		@include generateGrid(4);
+		margin-right: 0;
+
+		& label {
+
+			position: absolute;
+			left: -9999px;
+		}
+		
+	}
+
+	& input {
+
+		@include generateGrid(3);
+		margin: 0;
+		@include box-sizing( border-box );
+		padding: 0.25em 0.5em;
+		@include border-radius( 1em 0 0 1em );
+	}
+
+	& input[ type="submit" ] {
+
+		@include generateGrid(1);
+		margin: 0;		
+
+		@include border-radius( 0 1em 1em 0);
+
+		&:hover {
+
+			color: #060;
+			background-color: #8f8;
+			border-color: #4f4;
+		}
+	}
+
+	& form {
+
+		padding: 0.25em 0;
+
+		@include border-radius( 2em );
+
+		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 5px, $color : rgba( 255, 255, 255, 0.4 ) );
+
+		background-color: #f1f1f1;
+		background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed) );
+		background: -moz-linear-gradient(top,  #fff,  #ededed);
+		background: -o-linear-gradient(top,  #fff,  #ededed);
+		background: -ms-linear-gradient(top,  #fff,  #ededed);
+
+		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
+		-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
+	}
+
+	& #reseaux {
+
+		@include generateGrid(3);
+
+	}
+
+	& a {
+
+		color: white;
 	}
 
 }
@@ -476,7 +558,7 @@ body #container {
 
 		@include generateGrid(10);
 		display: block;
-		margin: $gutter auto 0 auto
+		margin: 0 auto
 	}
 
 	& form {
@@ -738,6 +820,7 @@ body #container {
 	}
 
 	& #col_right {
+
 		@include generateGrid(6);
 		margin: 0 0 0 $gutter/2;
 		float: right;
