@@ -2,23 +2,15 @@
 
 		<footer id="footer" role="footer">
 
-			<div>				
-
-				<div id="reseaux">
-
-		            <h3><?php _e('Suivez moi sur facebook') ?></h3>
-
-		            <a href="https://www.facebook.com/DusaiwoirMickael" title="Page de Mickael Dusaiwoir" Alt="Se rendre sur la page facebook de Mickael Dusaiwoir" id="fb">Mickael Dusaiwoir</a>
-				
-				</div>
+			<div>
 
 				<p>
-					&copy; 2013 Dusaiwoir Mickael. Tous droits reservés.
+					&copy; 2013 <a href="https://www.facebook.com/DusaiwoirMickael" title="Page Facebook de Mickael Dusaiwoir" Alt="Se rendre sur ma page facebook" id="fb">Dusaiwoir Mickael</a>. Tous droits reservés.
 				</p>
 		            
 	            <div id="mc_embed_signup">
 
-	                <h3>Inscrivez vous à la newsletter</h3>
+	                <h3>Newsletter</h3>
 
 	                <form action="http://magic-of-design.us6.list-manage.com/subscribe/post?u=9a6af94c92a351b99d19455c6&amp;id=b3b5b9430f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 
