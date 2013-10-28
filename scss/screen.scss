@@ -1045,8 +1045,11 @@ body #container {
 	#banner {
 
 		@include generateGrid(10);
-		margin-top: $gutter/2;
-		margin-bottom: $gutter/2;
+		margin: $gutter/2 0;
+
+		& figure {
+			margin: 0 $gutter/2;
+		}
 
 		& img {
 
@@ -1312,6 +1315,49 @@ body #container {
 
 		}
 
+	}
+
+	/*  Contact  */
+
+	#contact {
+
+		@include generateGrid(10);
+		margin: 0;
+
+		& h2, & form {
+
+			width: $maxCol;
+		}
+
+		& #left {
+
+			@include generateGrid(4);
+			margin-bottom: $gutter;	
+			margin-left: 0;		
+
+			& label, & input {
+
+				@include generateGrid(4);				
+				margin: $gutter/2 $gutter/2 $gutter/2 0;
+			}
+		}
+
+		& #right {
+
+			@include generateGrid(5);
+			margin-bottom: $gutter;
+
+			& label, & textarea {
+
+				@include generateGrid(5);				
+				margin: $gutter/2 0 $gutter/2 $gutter/2;
+			}
+			
+			& input {
+
+				margin-top: 2.8em;
+			}
+		}
 	}
 
 }
