@@ -79,10 +79,10 @@
 
 		function portfolio_comment( $comment, $args, $depth ) { ?>
 			
-			<li class="comment">
+			<li class="comment"  itemscope="http://schema.org/Comment">
 
 				<figure>
-					<img src="<?php echo( get_bloginfo('template_directory') ); ?>/images/icon_unknown.jpg" width="60" height="60" alt="Image de profil" title="Image de profil" />
+					<img src="<?php echo( get_bloginfo('template_directory') ); ?>/images/icon_unknown.jpg" width="60" height="60" alt="Image de profil" title="Image de profil" itemprop="image" />
 				</figure>
 
 				<p class="metadata">

@@ -48,12 +48,12 @@
 			?>
 
 				<ul id="skill">
-					<li><span class="bar graphic-design"></span><h3>Graphic Design</h3></li>
-					<li><span class="bar html-css"></span><h3>Html // Css</h3>
-					<li><span class="bar jquery"></span><h3>jQuery</h3>
-					<li><span class="bar wordpress"></span><h3>Wordpress</h3>
-					<li><span class="bar codeignieter"></span><h3>CodeIgnieter</h3></li>
-					<li><span class="bar drupal"></span><h3>Drupal</h3></li>
+					<li class="float_left"><span class="bar graphic-design"></span><h3>Graphic Design</h3></li>
+					<li class="float_right"><span class="bar html-css"></span><h3>Html // Css</h3>
+					<li class="float_left"><span class="bar jquery"></span><h3>jQuery</h3>
+					<li class="float_right"><span class="bar wordpress"></span><h3>Wordpress</h3>
+					<li class="float_left"><span class="bar codeignieter"></span><h3>CodeIgnieter</h3></li>
+					<li class="float_right"><span class="bar drupal"></span><h3>Drupal</h3></li>
 				</ul>
 
 		</section>
@@ -72,7 +72,7 @@
 					while ( $the_query->have_posts() ) : 
 						$the_query->the_post();
 			?>
-						<article class="post" id="<?php the_ID(); ?>" itemscope itemprop="http://schema.org/BlogPosting">
+						<article class="post" id="<?php the_ID(); ?>" itemscope itemtype="http://schema.org/BlogPosting">
 
 							<figure>
 

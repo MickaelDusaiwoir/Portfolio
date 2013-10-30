@@ -37,7 +37,7 @@
 
 							?>
 
-								<a href="<?php the_permalink(); ?>" class="small_img <?php echo ('small_img_'.$i); ?>" itemscope itemprop="http://schema.org/CreativeWork" itemprop="url" title="Voir l'entièreter du projet : <?php the_title(); ?>" >
+								<a href="<?php the_permalink(); ?>" class="small_img <?php echo ('small_img_'.$i); ?>" itemscope itemtype="http://schema.org/CreativeWork" itemprop="url" title="Voir l'entièreter du projet : <?php the_title(); ?>" >
 									<article>
 
 									  <?php the_post_thumbnail('small_img', array( 'itemprop'=> 'image' ) ); ?>

@@ -15,12 +15,27 @@ $colWidth : 60px;
 
 @import "functions";
 
+/*  Police de caractère  */
+
+@font-face{
+    font-family : "Fira";
+
+    src : url('../font/FiraSans-Regular.eot'); /* Pour IE9 Compat mode */
+    src : url('../font/FiraSans-Regular.eot?') format('eot'),
+          url('../font/FiraSans-Regular.woff') format('woff'),
+          url('../font/FiraSans-Regular.svg#abcd') format('svg'),
+          url('../font/FiraSans-Regular.ttf') format('truetype');
+}
+
+
 /*  Option générale  */
 
 body {
-	font: normal 15px Helvetica, Arial, Sans-Serif;
+	/*font: normal 15px Helvetica, Arial, Sans-Serif;*/
+	font: normal 15px Fira, Sans-Serif;
 	line-height: 1.5;
-	background-image: url('../images/wood.png');
+	/*background-image: url('../images/wood.png');*/
+	background-image: url('../images/purty_wood.png');
 }
 
 #header div, #footer div, #container {
@@ -32,7 +47,8 @@ body {
 
 #header, #footer {
 
-	background-image: url('../images/subtle_carbon.png');
+	/*background-image: url('../images/subtle_carbon.png');*/
+	background-image: url('../images/real_cf.png');
 
 }
 
@@ -40,7 +56,8 @@ body #container {
 
 	margin: $gutter/2 auto;
 
-	background-image: url('../images/grid_paper.png'); 
+	/*background-image: url('../images/grid_paper.png'); */
+	background-image: url('../images/whiteorchid.png'); 
 }
 
 #container:after, #header:after {
@@ -51,6 +68,11 @@ body #container {
     overflow: hidden;
     height: 1px;
 
+}
+
+h1, h2, h3, nav a {
+	/*font-family: Fira, Sans-Serif;*/
+	font-family: Helvetica, Arial, Sans-Serif;
 }
 
 /*  Header  */
@@ -86,7 +108,7 @@ body #container {
 	& a {
 
 		display: block;		
-		font-size: 1.2em;
+		font-size: 1.16em;
 		padding: 1.35em 0.75em;
 		text-align: center;
 		color: white;
@@ -95,9 +117,9 @@ body #container {
 
 		&:hover {
 
-			background-image: url('../images/whiteorchid.png');
+			background-image: url('../images/real_cf_white.png');
 			color: black;
-			font-size: 1.2em;			
+			font-size: 1.16em;			
 			padding: 1.35em 0.75em;
 		}
 
@@ -178,6 +200,11 @@ body #container {
 
 		vertical-align: top;
 
+		& h3 {
+
+			margin: 0 auto;
+		}
+
 	}
 
 }
@@ -187,27 +214,28 @@ body #container {
 #skill li { 
 
 	@include generateGrid(3);
+	display: block;
 	background:#e9e5e2;
 	@include background-image(linear-gradient(top, #e1ddd9, #e9e5e2));
 	height:20px; 
 
 	@include border-radius(10px); 
 	@include box-shadow(0 1px 0px #bebbb9 inset, 0 1px 0 #fcfcfc);
-
-	&:nth-child(odd) {
-
-		margin: 2.5em 8px 0 0;
-	}
-
-	&:nth-child(even) {
-
-		margin: 2em 0 0 8px;
-
-	}
-
 }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+#skill .float_left {
+	
+	float: left;
+	margin: 2.2em $gutter/2 0 0;
+}
+
+#skill .float_right {
+
+	float: right;
+	margin: 2.2em 0 0 $gutter/2;
+}
+
+/*@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 
 	#presentation #skill li:nth-child(odd) {
 		margin: 2.5em 0 0 0;
@@ -217,7 +245,7 @@ body #container {
 		margin: 2em 0 0 8px;
 	}
 
-}
+} */
 
 #skill li h3 { 
 
@@ -512,6 +540,7 @@ body #container {
 		@include box-sizing( border-box );
 		padding: 0.25em 0.5em;
 		@include border-radius( 1em 0 0 1em );
+		border: 1px solid rgba( 0, 0, 0, 0);
 	}
 
 	& input[ type="submit" ] {
@@ -520,6 +549,7 @@ body #container {
 		margin: 0;		
 
 		@include border-radius( 0 1em 1em 0);
+		border: 1px solid rgba( 0, 0, 0, 0);
 
 		&:hover {
 
@@ -808,7 +838,7 @@ body #container {
 #single_travaux {
 
 	@include generateGrid(12);
-	margin: $gutter $gutter/2 $gutter/2 $gutter/2;
+	margin: $gutter/2 $gutter/2;
 
 	& figure img {
 
@@ -922,7 +952,7 @@ body #container {
 		background-color: white;
 
 		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 3px, $color : rgba( 0, 0, 0, 0.4 ) );
-		@include border-radius(10px);
+		@include border-radius(5px);
 	}
 
 	& figure {
@@ -1065,32 +1095,85 @@ body #container {
 
 		& article {
 
-			@include generateGrid(4);
+			@include generateGrid(6);
 			margin-left: 0;
 		}
 
 		& #skill {
 
-			@include generateGrid(6);
-			margin-right: 0;
+			@include generateGrid(4);
+			margin: 0;
+			float: none;
 
 			& li {
 
-				@include generateGrid(3);
+				@include generateGrid(2);
+				display: block;
 				margin: 0;
 
-				&:nth-child(odd) {
-
-					margin: 2.5em 0 0 0;
-				}
-
-				&:nth-child(even) {
-
-					margin: 2em 0 0 $gutter/6;
-
+				& h3 {
+					@include generateGrid(2);
+					margin: 0;
 				}
 			}
+
+			& .float_left {
+
+				margin: 2.5em 0 0 0;
+			}
+
+			& .float_right {
+				
+				float: left;
+				margin: 2.5em 0 0 $gutter/2;
+			}
 		}
+	}
+
+	.graphic-design {
+
+		$graphicWidth: calculateSkill( 2, 66, 12, 60 );
+		@include skillBar( $graphicWidth, graphic-design, #f674a4, #e06995);
+
+	}
+
+	.html-css {
+
+		$htmlWidth: calculateSkill( 2, 66, 12, 90 );
+
+		@include skillBar( $htmlWidth, html-css, #f0bb4b, #d9aa44);
+
+	}
+
+	.jquery {
+
+		$jqueryWidth: calculateSkill( 2, 66, 12, 80 );
+
+		@include skillBar( $jqueryWidth, jquery, #a1ce5b, #91ba52);
+
+	}
+
+	.wordpress {
+
+		$wordpressWidth: calculateSkill( 2, 66, 12, 70 );
+
+		@include skillBar( $wordpressWidth, wordpress, #66b3cc, #5da3ba);	
+	}
+
+	.codeignieter {
+
+		$codeignieterWidth: calculateSkill( 2, 66, 12, 70 );
+
+		@include skillBar( $codeignieterWidth, codeignieter, #cc7070, #ba5d5d);
+
+	}
+
+	.drupal {
+
+		$drupalWidth: calculateSkill( 2, 66, 12, 50 );
+
+		@include skillBar( $drupalWidth, codeignieter, #70cc8e, #5dba5f);
+
 	}
 
 	#last_post {
@@ -1359,5 +1442,10 @@ body #container {
 			}
 		}
 	}
+}
+
+@media only screen and ( min-width : 480px ) and ( max-width : 768px ) {
+
+
 
 }

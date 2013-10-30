@@ -16,7 +16,7 @@
 		            the_post();
 		?>
 
-					<article id="single_travaux">
+					<article id="single_travaux" itemscope itemtype="http://schema.org/CreativeWork">
 						
 						<figure>
 							
@@ -30,11 +30,15 @@
 
 						<div id="col_right">
 
-							<h2>
+							<h2 itemprop="name">
 								<?php the_title(); ?>
 							</h2>
 							
-							<?php the_content(); ?>
+							<div itemprop="description">
+								<?php the_content(); ?>
+							</div>
+
+							<?php include 'share.php'; ?>
 
 						</div>
 
@@ -54,6 +58,7 @@
 
 	</div>
 
+	<?php include 'script-share.php'; ?>
 	<script type="text/javascript" src="<?php echo( get_bloginfo('template_directory') ); ?>/js/jquery.js"></script>
 	<script type="text/javascript" src="<?php echo( get_bloginfo('template_directory') ); ?>/js/jquery.heplbox.js"></script>
 	<script>

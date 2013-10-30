@@ -1,4 +1,4 @@
-<div id="comments" itemscope="http://schema.org/Comment">
+<div id="comments">
 
 	<h2>
 		<?php comments_number('Tous les commentaires&nbsp;(0)', 'Tous les commentaires&nbsp;(1)', 'Tous les commentaires&nbsp;(%)'); ?>
@@ -25,7 +25,7 @@
 		else :
 	?>
 
-		<p id="no_comment" itemprop="description">
+		<p id="no_comment" itemscope="http://schema.org/Comment">
 			<?php _e('Il n\'y a aucun commentaire'); ?>
 		</p>
 
