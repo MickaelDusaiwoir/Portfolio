@@ -912,6 +912,55 @@ h1, h2, h3, nav a {
 
 }
 
+#reseaux {
+
+	@include generateGrid(4);
+	display: block;
+	margin: $gutter auto 0 auto;
+
+	& #facebook {
+
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		margin-left: 2.5em;
+
+		background-color: #f8f8f8;
+		background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#dedede));
+		background-image: -moz-linear-gradient(top,#fff,#dedede);
+		background-image: -o-linear-gradient(top,#fff,#dedede);
+		background-image: -ms-linear-gradient(top,#fff,#dedede);
+		background-image: linear-gradient(top,#fff,#dedede);
+
+		border: #ccc solid 1px;
+		-moz-border-radius: 3px;
+		-webkit-border-radius: 3px;
+		border-radius: 3px;
+		cursor: pointer;
+		height: 18px;
+		max-width: 98%;
+		overflow: hidden;
+		
+		& a {
+
+			vertical-align: top;
+			color: #333;
+			text-shadow: 0 1px 0 rgba( 255, 255, 255, 0.5);
+			font-size: 11px;
+			font-family: Helvetica, Arial, sans-serif;
+			font-weight: bold;
+			text-decoration: none;
+			padding-right: 0.4em;
+		}
+
+		& img {
+		
+			vertical-align: top;
+			margin: 0.13em;
+		}
+	}
+}
+
 
 #comments {
 
@@ -1024,7 +1073,6 @@ h1, h2, h3, nav a {
 	& label {
 
 		margin: $gutter/2 0;
-		font-style: oblique;
 		font-weight: bold
 	}
 
@@ -1049,7 +1097,8 @@ h1, h2, h3, nav a {
 	}
 
 	& textarea {
-		 resize: none; 
+		 resize: vertical; 
+		 border: none;
 	}
 
 }
@@ -1398,6 +1447,18 @@ h1, h2, h3, nav a {
 
 		}
 
+	}
+
+	/*#reseaux {
+
+		width: ( ( $maxCol/2 ) - $gutter/2 );
+	}
+*/
+	#reseaux {
+
+		@include generateGrid(4);
+		display: block;
+		margin: $gutter auto 0 auto;
 	}
 
 	/*  Contact  */
