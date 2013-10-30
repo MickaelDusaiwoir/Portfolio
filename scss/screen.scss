@@ -524,6 +524,7 @@ h1, h2, h3, nav a {
 
 		@include generateGrid(7);
 		margin-right: 0;
+		margin-top: 0.5em;
 
 		& label {
 
@@ -540,22 +541,27 @@ h1, h2, h3, nav a {
 		@include box-sizing( border-box );
 		padding: 0.25em 0.5em;
 		@include border-radius( 1em 0 0 1em );
-		border: 1px solid rgba( 0, 0, 0, 0);
+		
+		border: 1px solid white;
 	}
 
 	& input[ type="submit" ] {
 
 		@include generateGrid(1);
 		margin: 0;		
+		border: 1px solid #aaa;
+		padding-bottom: 0.35em;
 
 		@include border-radius( 0 1em 1em 0);
-		border: 1px solid rgba( 0, 0, 0, 0);
+		@include single-box-shadow( $hoff : -1px, $voff : -1px, $blur : 1px, $color : rgba( 0, 0, 0, 0.3 ) , $inset : inset);
 
 		&:hover {
 
 			color: #060;
 			background-color: #8f8;
-			border-color: #4f4;
+			border: 1px solid #1d1;
+			text-shadow: 0px 1px 0px rgba( 255, 255, 255, 0.6);
+			@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 1px, $color : rgba( 0, 0, 0, 0.3 ) , $inset : inset);
 		}
 	}
 
@@ -563,17 +569,13 @@ h1, h2, h3, nav a {
 
 		@include generateGrid(4);
 		margin: 0;
-		padding: 0.25em 0;
+		padding: 0.25em 0 0.1em 0;
 
 		@include border-radius( 2em );
 
-		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 5px, $color : rgba( 255, 255, 255, 0.4 ) );
+		@include single-box-shadow( $hoff : 1px, $voff : 1px, $blur : 3px, $color : rgba( 255, 255, 255, 0.5 ) );
 
-		background-color: #f1f1f1;
-		background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed) );
-		background: -moz-linear-gradient(top,  #fff,  #ededed);
-		background: -o-linear-gradient(top,  #fff,  #ededed);
-		background: -ms-linear-gradient(top,  #fff,  #ededed);
+		background-color: #ccc;
 
 		filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie7 */
 		-ms-filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed'); /* ie8 */
@@ -627,7 +629,6 @@ h1, h2, h3, nav a {
 
 		margin: $gutter 0 $gutter/4 0;
 		font-weight: bold;
-		font-style: italic;
 	}
 
 	& input, & textarea {
@@ -667,6 +668,7 @@ h1, h2, h3, nav a {
 		resize: none;
 		margin-bottom: $gutter/2;
 		height: 7.85em;
+		overflow: auto;
 	}
 
 	& .erreur, & #envoyer {
@@ -823,7 +825,6 @@ h1, h2, h3, nav a {
 		transition: left linear 0.3s;
 
 	}
-
 
 	& article {
 
@@ -1371,8 +1372,8 @@ h1, h2, h3, nav a {
 
 	#single_travaux {
 
-		@include generateGrid(10);
-		margin-top: $gutter/2 ;
+		width: $maxCol;
+		margin: $gutter/2 ;
 
 		& figure {
 
@@ -1396,7 +1397,7 @@ h1, h2, h3, nav a {
 		& #container_comment {
 
 			width: ( ( $maxCol/2 ) - $gutter/2 );
-			margin: $gutter $gutter/2;
+			margin: $gutter $gutter/2 $gutter 0;
 			float: left;
 		}
 
@@ -1449,11 +1450,6 @@ h1, h2, h3, nav a {
 
 	}
 
-	/*#reseaux {
-
-		width: ( ( $maxCol/2 ) - $gutter/2 );
-	}
-*/
 	#reseaux {
 
 		@include generateGrid(4);
@@ -1507,6 +1503,6 @@ h1, h2, h3, nav a {
 
 @media only screen and ( min-width : 480px ) and ( max-width : 768px ) {
 
-
+	
 
 }
